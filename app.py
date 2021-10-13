@@ -7,7 +7,7 @@ import pusher
 from flask_ngrok import run_with_ngrok
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="tarun-chatbot-mxtq-3e59c692db1f.json"
+
 
 
 
