@@ -8,6 +8,8 @@ from flask_ngrok import run_with_ngrok
 
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="tarun-chatbot-mxtq-3e59c692db1f.json"
+os.environ["DIALOGFLOW_PROJECT_ID"]= tarun-chatbot-mxtq
+
 
 app = Flask(__name__)
 #run_with_ngrok(app)
@@ -48,7 +50,7 @@ def webhook():
 @app.route('/send_message', methods=['POST'])
 def send_message():
     message = request.form['message']
-    project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+    project_id = os.environ["DIALOGFLOW_PROJECT_ID"]
     fulfillment_text = detect_intent_texts(project_id, "unique", message, 'en')
     response_text = { "message":  fulfillment_text }
     return jsonify(response_text)
