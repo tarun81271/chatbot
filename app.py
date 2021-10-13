@@ -15,6 +15,8 @@ app = Flask(__name__)
 #run_with_ngrok(app)
 
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "tarun-chatbot-mxtq-3e59c692db1f.json"
+
 
 def detect_intent_texts(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
