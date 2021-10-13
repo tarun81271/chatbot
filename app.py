@@ -14,6 +14,10 @@ import os
 app = Flask(__name__)
 #run_with_ngrok(app)
 
+credential_path = "tarun-chatbot-mxtq-3e59c692db1f.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+
+
 def detect_intent_texts(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
     session = session_client.session_path(project_id, session_id)
