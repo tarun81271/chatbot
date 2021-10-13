@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify, render_template
-import os
+
 import dialogflow
 import requests
 import json
 import pusher
 from flask_ngrok import run_with_ngrok
+
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="tarun-chatbot-mxtq-3e59c692db1f.json"
 
 app = Flask(__name__)
 #run_with_ngrok(app)
