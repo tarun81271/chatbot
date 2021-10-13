@@ -30,9 +30,9 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.get_json(silent=True)
-    if data['queryResult']['queryText'] == 'yes':
+    if data['queryResult']['queryText'] == 'hi':
         reply = {
-            "fulfillmentText": "Ok. Tickets booked successfully.",
+            "fulfillmentText": "How may I help you today",
         }
         return jsonify(reply)
 
