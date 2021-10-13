@@ -36,17 +36,9 @@ def index():
 @cross_origin()
 def webhook():
     data = request.get_json(silent=True)
-    if data['queryResult']['queryText'] == 'hi':
-        reply = {
-            "fulfillmentText": "How may I help you today",
-        }
-        return jsonify(reply)
-
-    elif data['queryResult']['queryText'] == 'no':
-        reply = {
-            "fulfillmentText": "Ok. Booking cancelled.",
-        }
-        return jsonify(reply)
+    return{
+        'fulfillmentText': 'Hello from the other side.'
+    }
         
 @app.route('/send_message', methods=['POST'])
 def send_message():
