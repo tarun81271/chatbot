@@ -5,7 +5,7 @@ import requests
 import json
 import pusher
 from flask_ngrok import run_with_ngrok
-
+from flask_cors import cross_origin
 import os
 
 
@@ -33,6 +33,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/webhook', methods=['POST'])
+@cross_origin()
 def webhook():
     data = request.get_json(silent=True)
     if data['queryResult']['queryText'] == 'hi':
