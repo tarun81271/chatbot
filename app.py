@@ -8,8 +8,7 @@ from flask_ngrok import run_with_ngrok
 from flask_cors import cross_origin
 import os
 
-import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="tarun-chatbot-mxtq-3e59c692db1f.json"
+
 
 
 app = Flask(__name__)
