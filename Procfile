@@ -1,2 +1,2 @@
-web: gunicorn wsgi:index
+web: gunicorn app:app
 
